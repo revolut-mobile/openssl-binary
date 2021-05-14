@@ -19,7 +19,7 @@ build_xcframework() {
     mkdir -p "${OPENSSL_OUTPUT_DIR}"
 
     # Create xcframework using the openssl script
-    (cd "${BUILD_DIR}/${VERSION}" && sh "scripts/create-frameworks.sh")
+    (cd "${BUILD_DIR}/${VERSION}" && ./scripts/create-frameworks.sh)
 
     # The generated xcframework contains slices for macos and macosx_catalyst.
     # We dont need those, so instead create our own xcframework with just the iphoneos
