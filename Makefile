@@ -1,2 +1,4 @@
-build_1_1_1100:
-	Scripts/make_xcframework.sh build_1_1_1100
+BUILD_VERSION ?= 1.1.2301
+
+distribute:
+	Scripts/make_xcframework.sh build "$(BUILD_VERSION)"
