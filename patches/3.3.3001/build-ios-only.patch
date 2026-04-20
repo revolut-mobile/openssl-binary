@@ -1,0 +1,24 @@
+diff --git a/scripts/build.sh b/scripts/build.sh
+index 4adf604..e7257c1 100755
+--- a/scripts/build.sh
++++ b/scripts/build.sh
+@@ -479,9 +479,9 @@ if [ ! -f "${SCRIPT_DIR}/../openssl-${OPENSSL_VERSION}.tar.gz" ]; then
+    rm -f "${SCRIPT_DIR}/../openssl-${OPENSSL_VERSION}.tar.gz.sha256"
+ fi
+ 
+-build_watchos
+-build_appletvos
++# build_watchos
++# build_appletvos
+ build_ios
+-build_visionos
+-build_macos
+-build_catalyst
+\ No newline at end of file
++# build_visionos
++# build_macos
++# build_catalyst
+\ No newline at end of file
+-- 
+2.50.1 (Apple Git-155)
+

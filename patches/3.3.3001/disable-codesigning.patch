@@ -1,0 +1,177 @@
+diff --git a/Project.swift b/Project.swift
+index 9070306..d6b2d7a 100644
+--- a/Project.swift
++++ b/Project.swift
+@@ -1,7 +1,5 @@
+ import ProjectDescription
+ 
+-// TUIST_DEVELOPMENT_TEAM
+-private let developmentTeam = SettingValue(stringLiteral: Environment.developmentTeam.getString(default: ""))
+ // TUIST_MARKETING_VERSION
+ private let marketingVersion: String = Environment.marketingVersion.getString(default: "")
+ 
+@@ -45,9 +43,10 @@ let project = Project(
+                     "SKIP_INSTALL": "NO",
+                     "COPY_PHASE_STRIP": "NO",
+ 
+-                    "DEVELOPMENT_TEAM": developmentTeam,
+-                    "CODE_SIGN_IDENTITY": "Apple Distribution",
+-                    "CODE_SIGN_STYLE": "Manual"
++                    "CODE_SIGN_IDENTITY": "",
++                    "CODE_SIGN_STYLE": "Manual",
++                    "DEVELOPMENT_TEAM": "",
++                    "PROVISIONING_PROFILE_SPECIFIER": ""
+                 ])
+             )
+         ),
+@@ -88,9 +87,10 @@ let project = Project(
+                     "SKIP_INSTALL": "NO",
+                     "COPY_PHASE_STRIP": "NO",
+ 
+-                    "DEVELOPMENT_TEAM": developmentTeam,
+-                    "CODE_SIGN_IDENTITY": "iPhone Distribution",
+-                    "CODE_SIGN_STYLE": "Manual"
++                    "CODE_SIGN_IDENTITY": "",
++                    "CODE_SIGN_STYLE": "Manual",
++                    "DEVELOPMENT_TEAM": "",
++                    "PROVISIONING_PROFILE_SPECIFIER": ""
+                 ])
+             )
+         ),
+@@ -129,9 +129,10 @@ let project = Project(
+                     "SKIP_INSTALL": "NO",
+                     "COPY_PHASE_STRIP": "NO",
+ 
+-                    "DEVELOPMENT_TEAM": developmentTeam,
+-                    "CODE_SIGN_IDENTITY": "Developer ID Application",
+-                    "CODE_SIGN_STYLE": "Manual"
++                    "CODE_SIGN_IDENTITY": "",
++                    "CODE_SIGN_STYLE": "Manual",
++                    "DEVELOPMENT_TEAM": "",
++                    "PROVISIONING_PROFILE_SPECIFIER": ""
+                 ])
+             )
+         ),
+@@ -171,9 +172,10 @@ let project = Project(
+                     "SKIP_INSTALL": "NO",
+                     "COPY_PHASE_STRIP": "NO",
+ 
+-                    "DEVELOPMENT_TEAM": developmentTeam,
+-                    "CODE_SIGN_IDENTITY": "Developer ID Application",
+-                    "CODE_SIGN_STYLE": "Manual"
++                    "CODE_SIGN_IDENTITY": "",
++                    "CODE_SIGN_STYLE": "Manual",
++                    "DEVELOPMENT_TEAM": "",
++                    "PROVISIONING_PROFILE_SPECIFIER": ""
+                 ])
+             )
+         ),
+@@ -214,9 +216,10 @@ let project = Project(
+                     "SKIP_INSTALL": "NO",
+                     "COPY_PHASE_STRIP": "NO",
+ 
+-                    "DEVELOPMENT_TEAM": developmentTeam,
+-                    "CODE_SIGN_IDENTITY": "Apple Distribution",
+-                    "CODE_SIGN_STYLE": "Manual"
++                    "CODE_SIGN_IDENTITY": "",
++                    "CODE_SIGN_STYLE": "Manual",
++                    "DEVELOPMENT_TEAM": "",
++                    "PROVISIONING_PROFILE_SPECIFIER": ""
+                 ])
+             )
+         ),
+@@ -257,9 +260,10 @@ let project = Project(
+                     "SKIP_INSTALL": "NO",
+                     "COPY_PHASE_STRIP": "NO",
+ 
+-                    "DEVELOPMENT_TEAM": developmentTeam,
+-                    "CODE_SIGN_IDENTITY": "Apple Distribution",
+-                    "CODE_SIGN_STYLE": "Manual"
++                    "CODE_SIGN_IDENTITY": "",
++                    "CODE_SIGN_STYLE": "Manual",
++                    "DEVELOPMENT_TEAM": "",
++                    "PROVISIONING_PROFILE_SPECIFIER": ""
+                 ])
+             )
+         ),
+@@ -300,9 +304,10 @@ let project = Project(
+                     "SKIP_INSTALL": "NO",
+                     "COPY_PHASE_STRIP": "NO",
+ 
+-                    "DEVELOPMENT_TEAM": developmentTeam,
+-                    "CODE_SIGN_IDENTITY": "Apple Distribution",
+-                    "CODE_SIGN_STYLE": "Manual"
++                    "CODE_SIGN_IDENTITY": "",
++                    "CODE_SIGN_STYLE": "Manual",
++                    "DEVELOPMENT_TEAM": "",
++                    "PROVISIONING_PROFILE_SPECIFIER": ""
+                 ])
+             )
+         ),
+@@ -343,9 +348,10 @@ let project = Project(
+                     "SKIP_INSTALL": "NO",
+                     "COPY_PHASE_STRIP": "NO",
+ 
+-                    "DEVELOPMENT_TEAM": developmentTeam,
+-                    "CODE_SIGN_IDENTITY": "Apple Distribution",
+-                    "CODE_SIGN_STYLE": "Manual"
++                    "CODE_SIGN_IDENTITY": "",
++                    "CODE_SIGN_STYLE": "Manual",
++                    "DEVELOPMENT_TEAM": "",
++                    "PROVISIONING_PROFILE_SPECIFIER": ""
+                 ])
+             )
+         ),
+@@ -386,9 +392,10 @@ let project = Project(
+                     "SKIP_INSTALL": "NO",
+                     "COPY_PHASE_STRIP": "NO",
+ 
+-                    "DEVELOPMENT_TEAM": developmentTeam,
+-                    "CODE_SIGN_IDENTITY": "Apple Distribution",
+-                    "CODE_SIGN_STYLE": "Manual"
++                    "CODE_SIGN_IDENTITY": "",
++                    "CODE_SIGN_STYLE": "Manual",
++                    "DEVELOPMENT_TEAM": "",
++                    "PROVISIONING_PROFILE_SPECIFIER": ""
+                 ])
+             )
+         ),
+@@ -429,14 +436,12 @@ let project = Project(
+                     "SKIP_INSTALL": "NO",
+                     "COPY_PHASE_STRIP": "NO",
+ 
+-                    "DEVELOPMENT_TEAM": developmentTeam,
+-                    "CODE_SIGN_IDENTITY": "Apple Distribution",
+-                    "CODE_SIGN_STYLE": "Manual"
++                    "CODE_SIGN_IDENTITY": "",
++                    "CODE_SIGN_STYLE": "Manual",
++                    "DEVELOPMENT_TEAM": "",
++                    "PROVISIONING_PROFILE_SPECIFIER": ""
+                 ])
+             )
+         )
+     ]
+-)
+-
+-
+-
++)
+\ No newline at end of file
+diff --git a/scripts/create-frameworks.sh b/scripts/create-frameworks.sh
+index cdca0af..991e2d2 100755
+--- a/scripts/create-frameworks.sh
++++ b/scripts/create-frameworks.sh
+@@ -208,8 +208,8 @@ xcrun xcodebuild -create-xcframework \
+ 	-output "${BASE_PWD}/Frameworks/${FWNAME}.xcframework"
+ 	
+ # Sign
+-echo "Signing xcframework as ${IDENTITY}"
+-xcrun codesign --timestamp -s "${IDENTITY}" "${BASE_PWD}/Frameworks/${FWNAME}.xcframework"
++# echo "Signing xcframework as ${IDENTITY}"
++# xcrun codesign --timestamp -s "${IDENTITY}" "${BASE_PWD}/Frameworks/${FWNAME}.xcframework"
+ 
+ # Zip archive
+ pushd "${BASE_PWD}/Frameworks"
+-- 
+2.50.1 (Apple Git-155)
+
